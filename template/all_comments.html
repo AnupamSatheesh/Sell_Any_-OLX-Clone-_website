@@ -1,0 +1,80 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <!-- Nav bar Links -->
+        <link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        
+
+        <style>
+            /* Adding vertical lines between columns */
+            table th, table td {
+                border-right: 1px solid #ddd; /* Adjust color and width as needed */
+            }
+        
+            /* Optionally, remove the border from the last column */
+            table th:last-child, table td:last-child {
+                border-right: none;
+            }
+        </style>
+
+
+    </head>
+    <body>
+        <!-- Header -->
+        {% include 'nav_bar_1_.html' %}
+        <br><br><br><br>
+
+        <div class="table-responsive-sm container">
+            <h4 style="color: lightskyblue;">Public Feedback About Our Website</h4>
+            <hr style="border-width: 2px; background-color: black;"> 
+            <br>
+            <table class="table table-light">
+                <thead>
+                    <tr>
+                        <th scope="col">Public Name</th>
+                        <th scope="col">Feedback</th>
+                        <th scope="col">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in value %}    
+                    <tr>
+                        <td style="word-wrap: break-word; white-space: normal; max-width: 100px; text-transform: capitalize;">{{i.name}}</td>
+                        <td style="word-wrap: break-word; white-space: normal; max-width: 300px;">{{i.body}}</td>
+                        <td>{{i.date_added}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

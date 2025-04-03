@@ -1,0 +1,215 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+        <!-- Bootstrap core JavaScript -->
+        <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
+        <!-- Additional Scripts -->
+        <script src="{% static 'assets/js/custom.js' %}"></script>
+        <script src="{% static 'assets/js/owl.js' %}"></script>
+        <script src="{% static 'assets/js/slick.js' %}"></script>
+        <script src="{% static 'assets/js/isotope.js' %}"></script>
+        <script src="{% static 'assets/js/accordions.js' %}"></script>
+
+
+        <script language = "text/Javascript"> 
+        cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+        function clearField(t){                   //declaring the array outside of the
+        if(! cleared[t.id]){                      // function makes it static and global
+            cleared[t.id] = 1;  // you could use true and false, but that's more typing
+            t.value='';         // with more chance of typos
+            t.style.color='#fff';
+            }
+        }
+        </script>
+
+
+        <!-- Log-out alert box script -->
+        <script>
+          function logoutAlert(event) {
+            // Prevent the default action (navigating to 'buyer_logout')
+            event.preventDefault();
+            
+            // Show the alert
+            alert("You have loged out....!");
+            
+            // Optionally, after the alert, you can redirect to the logout page
+            // You can use this to navigate after showing the alert
+            window.location.href = 'buyer_logout'; // Redirect to the logout page
+          }
+        </script>
+
+
+    </head>
+
+    <body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand" href=""><h2>Sell <em>Any</em></h2></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="buyer_search">What's your need ?
+                    <span class="sr-only"></span>
+                  </a>
+                </li> 
+                <li class="nav-item">
+                  <a class="nav-link" href="Buyer_transactions">Payment History</a>
+                </li>
+                <li class="nav-item">
+                  <a href="buyer_logout" class="nav-link text-danger" onclick="logoutAlert(event)">Logout</a>
+                </li>
+                <li class="nav-item">
+                  <a href="buyer_personal_details/{{value2.id}}"><img src="{{value2.bpic.url}}" alt="profile pic" class="w-100 rounded-circle" style="height: 50px;"></a>            
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+
+        <!-- Banner Starts Here -->
+        <div class="banner header-text">
+            <div class="owl-banner owl-carousel">
+              <div class="banner-item-01">
+                <div class="text-content">
+                  <h4 style="text-transform: capitalize; font-size: 100px;">Hii {{value2.name}}</h4>
+                  <h4 style="color: blueviolet;">Welcome to the buyer profile</h4>
+                  <h2>You can Buy any products from here</h2>
+                  <h3 style="color:darkblue; font-weight: 800;">Enjoy using Sell Any . . . </h3>
+                </div>
+              </div>
+              <div class="banner-item-02">
+                <div class="text-content">
+                  <h4>Contact the seller</h4>
+                  <h2>Online Payment is available . . .</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Banner Ends Here -->
+
+
+
+          <div class="latest-products">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="section-heading">
+                    <h2>Latest Products</h2>
+                    <a href="buyer_search">Search for . . . .  <i class="fa fa-angle-right"></i></a>
+                  </div>
+                </div>
+                {% for i in value1 %}
+                <div class="col-md-4">
+                  <div class="product-item">
+                    <div class="btn btn-light"><img src="{{ i.image1.url }}" alt=""></div>
+                    <div class="down-content">
+                      <a href="buyer_home_buy_button/{{i.id}}"><h4>{{ i.title }}</h4></a>
+                      <h6>INR: {{i.prize}}</h6>
+                      <p>{{i.desc}}</p>
+                      <ul class="stars">
+                        <li><a href="buyer_home_buy_button/{{i.id}}" class="btn btn-primary">View Details</a></li>
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+              {% endfor %}
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="best-features">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="section-heading">
+                    <h2>About Us</h2>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="left-content">
+                    <h4>Sell Any</h4>
+                    <p>Sell Any is a business website that can sell any types of second-hand products by any pubic who have 
+                      registered in Sell Any website. This type of marketing is most common trend ongoing in our society that 
+                      finds very easiest way to sell the second-hand products. The most advantage of Sell Any website is more 
+                      secure of being negotiated with the prize of items because products value will be descriptive in the page 
+                      itself, only interested public will get into the involvement of particular product by seeing those 
+                      product images and videos posted by sellers.</p>
+                    <ul style="list-style-type: circle; font-size: 15px;" class="text-muted">
+                      <li>Admin Module</li>
+                      <li>User Authentication module (Admin, Seller, Buyer)</li>
+                      <li>Products Listing Module</li>
+                      <li>Search and Filter Module</li>
+                      <li>User Profile and Dashboard module</li>
+                      <li>Payment Integration Module</li>
+                      <li>Product Image and Media Management Module</li>
+                    </ul>
+                    <a href="about_us_readmore1" class="filled-button">Read More</a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="right-image">
+                    <img src="{% static 'assets/images/feature-image.jpg' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- Footer -->
+           {% include 'footer.html' %}
+    </body>
+</html>

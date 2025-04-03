@@ -1,0 +1,149 @@
+{% load static %}
+
+
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <!-- Additional Scripts -->
+        <link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/js/custom.js' %}"></script>        
+    </head>
+
+    <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand" href=""><h2>Sell <em>Any</em></h2></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="">What's your need ?
+                    <span class="sr-only"></span>
+                  </a>
+                </li> 
+                <li class="nav-item">
+                  <a class="nav-link" href="buyer_home_page">Go To Your Home</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+        
+
+
+
+
+
+
+
+
+
+
+        <br><br><br><br><br><br>
+
+
+
+        <div class="container text-center">
+          {% if messages %}
+          <div class="messages">
+              {% for message in messages %}
+                  <div class="alert alert-{{ message.tags }}">
+                      {{ message }}
+                  </div>
+              {% endfor %}
+          </div>
+          {% endif %}
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="text" class="form-control text-center" placeholder="search for products...." name="searched"><br>
+                <button type="submit" class="btn btn-primary">Go</button>
+            </form><br><br>
+            <a href="buyer_return_homepage" class="btn btn-dark">Back to your Dashboard</a><br><br>
+
+        </div>
+
+            
+            {% if searched %}
+            <div class="latest-products">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="section-heading">
+                        <h2>Related Products</h2>
+                      </div>
+                    </div>
+                    {% for i in searched %}
+                    <div class="col-md-4">
+                      <div class="product-item">
+                        <div class="btn btn-light"><img src="{{ i.image1.url }}" alt=""></div>
+                        <div class="down-content">
+                          <a href="buyer_home_buy_button/{{i.id}}"><h4>{{ i.title }}</h4></a>
+                          <h6>INR: {{i.prize}}.00</h6>
+                          <p>{{i.desc}}</p>
+                          <ul class="stars">
+                            <li><a href="buyer_home_buy_button/{{i.id}}" class="btn btn-primary">View Details</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                  </div>
+                  {% endfor %}
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+
+
+        <!-- Footer -->
+        {% include 'footer.html' %}
+
+
+
+
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

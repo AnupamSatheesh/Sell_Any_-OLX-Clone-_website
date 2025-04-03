@@ -1,0 +1,134 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>About Us</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    
+            <!-- Additional Scripts -->
+            <link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+            <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+            <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+            <script src="{% static 'assets/js/custom.js' %}"></script>
+    
+    </head>
+
+    <body>
+        {% block rm %}
+            
+        {% endblock rm %}
+           
+        <br><br><br><br><br>
+        
+        <div class="container">
+            <h1 style="border: 1px solid aqua;" class="text-center"><b><ins style="color: red; font-family: cursive;">Sell<ins style="color: blue; font-family: cursive;">Any</ins></ins></b></h1><br><br>
+            <p class="text-center" style="font-weight: 900; font-size:larger;"><b>
+                Sell Any is a business website that can sell any types of second-hand products by any 
+                pubic who registered in Sell Any website. This type of marketing is most common trend 
+                ongoing in our society that finds very easiest way to sell the second-hand products. 
+                The most advantage of Sell Any website is more secure of being negotiated with the 
+                prize of items because products value will be descriptive in the page itself, only interested 
+                public will get into the involvement of particular product by seeing those product images and 
+                videos posted by sellers.</b>
+                <hr style="background-color: black;">
+            </p><br>
+            <h3 style="color: blue;"><ins style="font-family: cursive;">Modules</ins></h3><br>
+            <ul style="list-style-type: circle;">
+                <li><ins style="font-weight: 800;">Admin module:</ins><p style="font-weight: 600;">The Admin Panel Module is used for monitoring and managing the 
+                    platform's overall operation. Admins can access user accounts, product listings, and 
+                    transactions to ensure compliance with the platform's rules.</p></li>
+                <li><ins style="font-weight: 800;">User Authentication Module:</ins><p style="font-weight: 600;">Admins can access user accounts, product listings, 
+                    and transactions to ensure compliance with the platform's rules. Admins can access user 
+                    accounts, product listings, and transactions to ensure compliance 
+                    with the platform's rules.</p></li>
+                <li><ins style="font-weight: 800;">Product Listing Module:</ins><p style="font-weight: 600;">The Product Listing Module enables users to 
+                    create and manage ads for products they wish to sell. Users can upload product images, 
+                    set a title, description, and price, select the product category</p></li>
+                <li><ins style="font-weight: 800;">Search and Filter Module:</ins><p style="font-weight: 600;">It enables the enhancement of relevant search 
+                    results that provides accordingly to the user inputs. This module includes a search bar 
+                    to get the product results based on keyword, categories, prizing-range.</p></li>
+                <li><ins style="font-weight: 800;">Chat/Communication Module:</ins><p style="font-weight: 600;">This facilitates the direct communication between 
+                    users and buyers. Once a buyer expresses interest in a product, they can initiate a 
+                    conversation with the seller using a real-time messaging system. This module enables 
+                    users to send text messages, negotiate pricing, and ask additional questions about 
+                    the product, without needing to disclose personal contact information.</p></li>
+                <li><ins style="font-weight: 800;">User Profile and Dashboard Module:</ins><p style="font-weight: 600;">This module allows users to manage 
+                    their personal information and track their activities within the platform. The dashboard 
+                    includes details like active listings, transaction history, saved items, it also allows 
+                    users to update their profile picture, contact details, and location, providing a 
+                    personalized experience for each user.</p></li>
+                <li><ins style="font-weight: 800;">Payment Integration and Transaction Module:</ins><p style="font-weight: 600;">The Payment Integration Module 
+                    ensures that transactions between buyers and sellers are secure and smooth. While the 
+                    platform may not directly handle payment, it can integrate with third-party payment 
+                    gateways like Razorpay</p></li>
+                <li><ins style="font-weight: 800;">Product Image and Media Management Module:</ins><p style="font-weight: 600;">The Product Image and Media Management 
+                    Module enables sellers to upload and manage images and videos 
+                    for their product listings.</p></li>
+            </ul>
+                <hr style="background-color: black;">
+            <h3><ins style="color: blue; font-family: cursive;">Software Requirements</ins></h3><br>
+            <ul style="list-style-type: disc;">
+                <li style="font-weight: 800;">Django Python</li>
+                <li style="font-weight: 800;">HTML5</li>
+                <li style="font-weight: 800;">CSS</li>
+                <li style="font-weight: 800;">Java Script</li>
+                <li style="font-weight: 800;">Bootstrap</li>
+                <li style="font-weight: 800;">jQuery</li>
+            </ul>
+            <hr style="background-color: black;">
+        </div>
+
+
+
+
+        <div class="container">
+            <h3><ins  style="color: blue; font-family: cursive;">Basic Guidelines</ins></h3>
+            <div class="container">
+                <p style="font-weight: 800;"><span style="font-weight: 700; color: red; font-size: larger;">Important Note:</span> Please be carefull while selling the products which is not in our terms and 
+                    condition. If we find you have violated, you will be removed by the admin automatically 
+                    and have to bear the consiquences. You can sell the products like vehicle, spare-parts, 
+                    households, wearings, etc. You can click this button for sell the Items. Have a nice day
+                    and enjoy using Sell Any!!....</p>
+            </div>
+        </div>
+
+
+
+        {% include 'footer.html' %}
+
+        
+
+            
+        
+
+            
+
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

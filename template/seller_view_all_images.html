@@ -1,0 +1,231 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <style>
+            .file:valid{color: red; font-size:xx-small;}
+        </style>
+        
+    </head>
+
+    <body>
+        
+        <!-- Header -->
+        {% include 'nav_bar_3_seller.html' %}
+
+        <br><br><br>
+
+        <div>
+            <form action="/seller_edit_image_details/{{value.id}}" method="post" enctype="multipart/form-data">
+        <div>
+            <div class="container"><br><br>
+                <h1>Product details</h1>
+                <hr><br>
+                <div class="row">
+                    
+
+                    <!-- First Image -->
+                    <div class="col-sm-3 d-flex gap-3 g-3">
+                        
+                        <div class="card btn btn-light" style="display: inline-block;">
+                            <img src="{{ value.image1.url }}" class="card-img-top" alt="{{ i.title }}" style="max-width: 100%; height: 200px;">
+                            <div class="card-body">
+                                <input type="file" class="file" name="image1" accept="image/*">
+                            </div>
+                            <div class="card-body">
+                                <h5 style="color: blue;">Replace</h5>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Second image -->
+                    <div class="col-sm-3 d-flex gap-3 g-3">
+                        
+                        <div class="card btn btn-light" style="display: inline-block;">
+                            <img src="{{ value.image2.url }}" class="card-img-top" alt="{{ i.title }}" style="max-width: 100%; height: 200px;">
+                            <div class="card-body">
+                                <input type="file" class="file" name="image2" accept="image/*">
+                            </div>
+                            <div class="card-body">
+                                <h5 style="color: blue;">Replace</h5>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Third Image -->
+                    <div class="col-sm-3 d-flex gap-3 g-3">
+                        
+                        <div class="card btn btn-light" style="display: inline-block;">
+                            <img src="{{ value.image3.url }}" class="card-img-top" alt="{{ i.title }}" style="max-width: 100%; height: 200px;">
+                            <div class="card-body">
+                                <input type="file" class="file" name="image3" accept="image/*">
+                            </div>
+                            <div class="card-body">
+                                <h5 style="color: blue;">Replace</h5>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Forth Image -->
+                    <div class="col-sm-3 d-flex gap-3 g-3">
+                        
+                        <div class="card btn btn-light" style="display: inline-block;">
+                            <img src="{{ value.image4.url }}" class="card-img-top" alt="{{ i.title }}" style="max-width: 100%; height: 200px;">
+                            <div class="card-body">
+                                <input type="file" class="file" name="image4" accept="image/*">
+                            </div>
+                            <div class="card-body">
+                                <h5 style="color: blue;">Replace</h5>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Fifth Image -->
+                    <div class="col-sm-3 d-flex gap-3 g-3">
+                        
+                        <div class="card btn btn-light" style="display: inline-block;">
+                            <img src="{{ value.image5.url }}" class="card-img-top" alt="{{ i.title }}" style="max-width: 100%; height: 200px;">
+                            <div class="card-body">
+                                <input type="file" class="file" name="image5" accept="image/*">
+                            </div>
+                            <div class="card-body">
+                                <h5 style="color: blue;">Replace</h5>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div style="height: 100px;"></div>
+
+                            {% csrf_token %}
+                            <table>
+                                <tr>
+                                    <td><label for="">Change the title</label></td>
+                                    <td><input type="text" class="form-control" value="{{value.title}}" name="tit" style="text-transform: capitalize;"></td>
+                                </tr>
+                                <tr style="height: 20px;"></tr>
+                                <tr>
+                                    <td><label for="">Change the description</label></td>
+                                    <td><textarea class="form-control" name="desc" style="text-transform: capitalize;" cols="60" rows="5">{{value.desc}}</textarea></td>
+                                </tr>
+                                <tr style="height: 20px;"></tr>
+                                <tr>
+                                    <td><label for="">INR Amount</label></td>
+                                    <td><input class="form-control" type="number" value="{{value.prize}}" name="amnt" ></td>
+                                    <td style="width: 20px;"></td>
+                                    <td><small><em class="text-muted">If you want to change the amount and images you have to delete this product entirely and re-insert the Product again with correct details...</em></small></td>
+                                </tr>
+                                <tr style="height: 70px;"></tr>
+                                <tr>
+                                    <td><input type="submit" value="Update Details" class="btn btn-primary"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+
+
+
+                </div>
+        </div>
+
+    
+
+
+
+
+
+    {% include 'footer.html' %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

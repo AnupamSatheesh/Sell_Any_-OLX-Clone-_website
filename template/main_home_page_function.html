@@ -1,0 +1,259 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Sixteen Clothing HTML Template</title>
+
+    <!-- Bootstrap core CSS -->
+    
+<!--
+
+TemplateMo 546 Sixteen Clothing
+
+https://templatemo.com/tm-546-sixteen-clothing
+
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    {% include 'nav_bar_1_.html' %}
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="banner header-text">
+      <div class="owl-banner owl-carousel">
+        <div class="banner-item-01">
+          <div class="text-content">
+            <h4>Sell your second hand products</h4>
+            <h2>Choose your products</h2>
+          </div>
+        </div>
+        <div class="banner-item-02">
+          <div class="text-content">
+            <h4>Contact the seller</h4>
+            <h2>Deal the items </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Banner Ends Here -->
+
+    <div class="latest-products">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2 style="color: brown; font-weight: 900;">On Trending</h2>
+              <a href="search">Search Products <i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+
+
+
+          <div class="col-md-4">
+            <div class="product-item">
+              <div class="btn btn-outline-primary"><a href="user_registration"><img src="{% static 'assets/images/Do you want to sell.jpg' %}" alt=""></a></div>
+              <div class="down-content">
+                <a href="#"><h4>{{ i.title }}</h4></a>
+                <p>{{i.desc}}</p>
+                <ul class="text-center">
+                  <h4 style="color:blueviolet">If You have already registered, click this button to login</h4>
+                  <li><a href="main_login" class="btn btn-primary">Login</a></li>
+                </ul>
+              </div>
+              
+            </div>
+        </div>
+
+
+
+
+
+
+
+          {% for i in value %}
+          <div class="col-md-4">
+            <div class="product-item">
+              <div class="btn btn-light"><img src="{{ i.image1.url }}" alt=""></div>
+              <div class="down-content">
+                <a href="#"><h4>{{ i.title }}</h4></a>
+                <h6>INR: {{i.prize}}</h6>
+                <p>{{i.desc}}</p>
+                <ul class="stars">
+                  <li><a href="login_for_buy_product/{{i.id}}" class="btn btn-primary">View Details</a></li>
+                </ul>
+              </div>
+              
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="best-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>About Us</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="left-content">
+              <h4 style="font-size:x-large;"><span style="color: black;"><ins>Sell</ins></span><span style="color: red;"><ins>Any</ins></span></h4>
+              <p style="font-weight: 500;">Sell Any is a business website that can sell any types of second-hand products by any pubic who have 
+                registered in Sell Any website. This type of marketing is most common trend ongoing in our society that 
+                finds very easiest way to sell the second-hand products. The most advantage of Sell Any website is more 
+                secure of being negotiated with the prize of items because products value will be descriptive in the page 
+                itself, only interested public will get into the involvement of particular product by seeing those 
+                product images and videos posted by sellers.</p>
+                <div class="container">
+
+                  <ul style="list-style-type: circle; font-size: 13px; font-weight: 700;" class="text-muted">
+                    <li>Admin Module</li>
+                    <li>User Authentication module (Admin, Seller, Buyer)</li>
+                    <li>Products Listing Module</li>
+                    <li>Search and Filter Module</li>
+                    <li>User Profile and Dashboard module</li>
+                    <li>Payment Integration Module</li>
+                    <li>Product Image and Media Management Module</li>
+                  </ul>
+                </div>
+              <a href="about_us_readmore" class="filled-button">Read More</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="right-image">
+              <img src="{% static 'assets/images/feature-image.jpg' %}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="inner-content">
+              <div class="row">
+                <div class="col-md-8">
+                  <h4>If you want to sell, you have to <em>REGISTER</em> to this website. </h4>
+                  <p><b><em>Important Note</em>:</b> Once you have registered, please be carefull to sell the products which is not violating to our terms and conditions.
+                     If we find you have violated, you will be removed by the admin automatically and have to bear the consiquences. You can sell the 
+                     products like vehicle, spare-parts, households, wearings, etc. For registering click this button. Have a nice dat and enjoy using Sell Any!!....
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <a href="user_registration" class="filled-button">Do you want to sell ?</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <br><br><br>
+
+    <div class="container">
+      <h4 style="font-family: cursive;"><ins style="color: blue;">What Need To Improve ?</ins></h4><br>
+      <form action="" method="post">
+        {% csrf_token %}
+      <table>
+        <tr>
+          <td><label for="">Enter Your Name</label></td>
+          <td style="width: 80px;"></td>
+          <td><input type="text"  class="form-control" style="font-size: 12px;" name="name" required></td>
+        </tr>
+        <tr>
+          <td><label for="">Your Feedback</label></td>
+          <td style="width: 80px;"></td>
+          <td><textarea cols="150" rows="6" class="form-control" style="font-size: 12px;" name="feed" required></textarea></td>
+        </tr>
+      </table>
+    <button type="submit" class="btn btn-danger btn-sm">Submit</button>
+    </form>
+
+    <div class="text-center">
+      <a href="all_comments">See All Public Comments...</a>
+    </div>
+    </div>
+
+
+
+
+
+
+    
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="inner-content">
+              <p>Copyright &copy; 2020 Sixteen Clothing Co., Ltd.
+            
+            - Design: TemplateMo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'assets/js/owl.js' %}"></script>
+    <script src="{% static 'assets/js/slick.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.js' %}"></script>
+    <script src="{% static 'assets/js/accordions.js' %}"></script>
+
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,280 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <style>
+          /* Toast container */
+          .toast {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #4CAF50; /* Green background */
+            color: white;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+          }
+        
+          /* Show the toast message */
+          .toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+          }
+        
+          /* Animation for fade-in and fade-out */
+          @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+          }
+        
+          @keyframes fadeout {
+            from {opacity: 1;}
+            to {opacity: 0;}
+          }
+        </style>
+
+<script>
+  function validate1() {
+    let na = document.forms["myform"]["name"].value;
+    let ag = document.forms["myform"]["age"].value;
+    let gn = document.forms["myform"]["gender"].value;
+    let ph = document.forms["myform"]["number"].value;
+    let ad = document.forms["myform"]["address"].value;
+    let un = document.forms["myform"]["username"].value;
+    let pw = document.forms["myform"]["password"].value;
+    let cpw = document.forms["myform"]["cpassword"].value;
+
+    // Validation checks
+    if (!/^[A-Za-z]+([ ]?[A-Za-z]+)*$/.test(na)) {
+      window.alert("Name Must contain only Alphabets...");
+      return false;
+    } else if (ag < 10) {
+      window.alert("Seller age must be atleast 10 years old to register as a seller...");
+      return false;
+    } else if (gn.length == 0) {
+      window.alert("Please choose the seller's gender...");
+      return false;
+    } else if (ph.length < 10 || ph.length > 10) {
+      window.alert("Phone Number must contain 10 Digits....");
+      return false;
+    } else if (ad.length < 10) {
+      window.alert("Is this your address with fewer characters? Please provide more details of your landmark...");
+      return false;}
+      else if (un.length < 4){
+        window.alert("Username must be atleast of 4 characters...");
+      return false;
+    }else if (!/[!@#$%^&*]/.test(pw)) {
+      window.alert("Password must contain at least one special character....");
+      return false;
+    } else if (pw.length < 4) {
+      window.alert("Password must contain at least 4 characters...");
+      return false;
+    } else if (pw != cpw) {
+      window.alert("Confirm password not matching, Please try again...");
+      return false;
+    } else {
+      // Show success toast notification
+      showToast("Registered Successfully, please login with your username and password....");
+    }
+  }
+
+  // Function to show the toast message
+  function showToast(message) {
+    const toast = document.createElement('div');
+    toast.classList.add('toast');
+    toast.innerText = message;
+    
+    // Append to body and make it visible
+    document.body.appendChild(toast);
+    toast.classList.add('show');
+    
+    // Remove the toast after the animation ends
+    setTimeout(() => {
+      toast.classList.remove('show');
+      document.body.removeChild(toast);
+    }, 5000); // Toast will disappear after 3 seconds
+  }
+</script>
+</head>
+
+    <body>
+        {% include 'nav_bar_1_.html' %}
+        <br><br><br>
+
+<!-- Section: Design Block -->
+<section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="background-image: url('static/assets/images/172.jpg'); height: 300px;"></div>    <!-- Background image -->
+  
+    <div class="card mx-4 mx-md-5 shadow-5-strong bg-body-tertiary" style="
+          margin-top: -100px;
+          backdrop-filter: blur(30px);
+          ">
+      <div class="card-body py-5 px-md-5">
+  
+        <div class="row d-flex justify-content-center">
+          <h4 class="text-start text-secondary"><ins>Buyer Sign up Form</ins></h4>
+
+
+          {% if messages %}
+          <div class="container alert alert-warning">
+            {% for message in messages %}
+              <p style="color: red;">{{ message }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+
+          <div class="col-lg-8">
+            <h2 class="fw-bold mb-5" style="color: red; font-size:xx-large; font-weight: bolder;">Sign <span style="color: blue; font-weight: bolder;">up</span></h2>
+            <form action="" method="post" name="myform" enctype="multipart/form-data" onsubmit="return validate1()">
+                {% csrf_token %}
+
+
+
+              <!-- Profile Picture -->
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" id="form3Example1" class="form-control" name="bpic" />
+                      <label class="form-label" for="form3Example1">Upload Profile Picture</label>
+                    </div>
+                  </div>
+
+              <!-- Name -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="form3Example1" class="form-control" name="name" placeholder="Enter your name" required />
+                    <label class="form-label" for="form3Example1">Name</label>
+                  </div>
+                </div>
+                <!-- Age -->
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="number" min="1" max="120" id="form3Example2" class="form-control" name="age" placeholder="Enter your age" required />
+                    <label class="form-label" for="form3Example2">Age</label>
+                  </div>
+                </div>
+              </div>
+               <!-- Gender -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline">
+                    <select name="gender" class="form-control" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="" disabled selected>Select your gender</option>
+                    </select>
+                    <label class="form-label" for="form3Example2">Gender</label>
+                  </div>
+                </div>
+                <!-- Phone number -->
+                <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="number" id="form3Example2" class="form-control" name="number" placeholder="Enter your mobile number" required/>
+                      <label class="form-label" for="form3Example2">Contact Number</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Address -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <textarea rows="6" class="form-control" name="address" placeholder="Address must contain Pin-code" required></textarea>
+                    <label class="form-label" for="form3Example3">Contact Address</label>
+                </div>
+              <!-- Email -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="email" id="form3Example1" class="form-control" name="email" placeholder="Enter your email ID" required/>
+                    <label class="form-label" for="form3Example1">Email</label>
+                  </div>
+                </div>
+            <!-- Username -->
+            <div class="col-md-6 mb-4">
+                <div data-mdb-input-init class="form-outline">
+                  <input type="text" id="form3Example2" class="form-control" name="username" placeholder="Enter new username" required />
+                  <label class="form-label" for="form3Example2">New Username</label>
+                </div>
+            </div>
+              <!-- new Password -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="password" id="form3Example1" class="form-control" name="password" placeholder="Enter new password" required/>
+                    <label class="form-label" for="form3Example1">Password</label>
+                  </div>
+                </div>
+                <!-- Confirm PAssword -->
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="password" name="cpassword" id="form3Example2" class="form-control" placeholder="Re-enter the password" required/>
+                    <label class="form-label" for="form3Example2">Confirm Password</label>
+                  </div>
+                </div>
+              </div>
+              <!-- Back to login Page -->
+              <div class="form-check d-flex justify-content-center mb-4">
+                <p style="font-weight: 600;">Do you have already an Account ? <a href="main_login">Click here</a> and sign in</p>
+              </div>
+  
+              <!-- Submit button -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="submit" class="btn btn-primary" value="Sign up"/>
+                  </div>
+                </div>
+                <!-- Reset Button -->
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="reset" class="btn btn-danger" value="Reset all details"/>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+
+  {% include 'footer.html' %}
+
+    </body>
+</html>

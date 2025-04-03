@@ -1,0 +1,35 @@
+{% load static %}
+<!-- Links -->
+<!-- 
+<link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+ -->
+
+
+<!-- Header -->
+<header class="">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href=""><h2>Sell <em>Any</em></h2></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="seller_homepage_return">Home
+                <span class="sr-only"></span>
+              </a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link text-danger"  href="seller_logout" onclick="logoutAlert(event)">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a href="seller_personal_data/{{value.id}}"><img src="{{value.spic.url}}" alt="profile pic" class="w-100 rounded-circle" style="height: 50px;"></a>            
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+

@@ -1,0 +1,132 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <!-- Additional Scripts -->
+        <link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/js/custom.js' %}"></script>
+
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <br><br>
+
+
+
+<div
+    class="table-responsive-sm "
+>   
+    <h4>Transaction Details</h4>
+    <hr>
+    <table
+        class="table table-bordered"
+    >
+        <thead>
+            <tr class="text-center">
+                <th scope="col" class="bg-secondary" style="color: aqua;">Product</th>
+                <th scope="col" class="bg-secondary" style="color: aqua;">Product Name</th>
+                <th scope="col" class="bg-secondary" style="color: aqua;">Product Order number</th>
+                <th scope="col" class="bg-secondary" style="color: aqua;">Description</th>
+                <th scope="col" class="bg-secondary" style="color: aqua;">Product price</th>
+                <th scope="col" class="bg-secondary" style="color: aqua;">Paid Amount</th>
+                <th scope="col" class="bg-secondary" style="color: aqua;">Seller Name</th>
+                <th scope="col" class="bg-secondary" style="color: aqua;">Seller Address</th>
+                <th scope="col" class="bg-secondary" style="color: aqua;">Seller Contact Number</th>
+                <th scope="col" class="bg-secondary" style="color: aqua;">Buyer Name</th>
+                <th scope="col" class="bg-secondary" style="color: aqua;">Buyer Address</th>
+                <th scope="col" class="bg-secondary" style="color: aqua;">Buyer Contact Number</th>
+                <th scope="col" class="bg-secondary" style="color: aqua;">Trasaction Status</th>
+                
+
+                <th scope="col" class="bg-secondary" style="color: aqua;">View</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            {% for i in value %}
+            <tr class="text-center">
+                <td style="background-color: lightyellow;">
+                    <img src="{{i.image1.url}}" alt="{{i.title}}" class="img-fluid" style="width: 100%;">
+                </td>
+                <td style="font-weight: 800; color: blue; text-transform: capitalize; background-color: lightyellow;">{{i.title}}</td>
+                <td style="background-color: lightyellow;">{{i.odr_id}}</td>
+                <td style="background-color: lightyellow;">{{i.desc}}</td>
+                <td style="background-color: lightyellow;">{{i.prize}}</td>
+                <td style="background-color: lightyellow;">{{i.prize}}</td>
+                <td style="background-color: lightgray;">{{i.seller_name}}</td>
+                <td style="background-color: lightgray;">{{i.seller_Address}}</td>
+                <td style="background-color: lightgray;">{{i.seller_number}}</td>
+                
+                <td style="background-color: lightblue;">{{i.buyer_name}}</td>
+                <td style="background-color: lightblue;">{{i.buyer_Address}}</td>
+                <td style="background-color: lightblue;">{{i.buyer_number}}</td>
+                <td style="color: green; font-weight: 800; font-size:x-large; background-color: lightgreen;">Transaction Completed <p style="font-weight: 500;">{{i.date}}</p></td>
+                <td style="background-color:cadetblue;">
+                    <a href="/admin_view_all_transaction_details/{{i.id}}" class="btn btn-primary">View all transaction details</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+        <!-- Footer -->
+        {% include 'footer.html' %}
+
+
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

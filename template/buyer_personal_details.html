@@ -1,0 +1,274 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <!-- Additional Scripts -->
+        <link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/js/custom.js' %}"></script>
+        <script>
+    function validate1() {
+    let na = document.forms["myform"]["name"].value;
+    let ag = document.forms["myform"]["age"].value;
+    let gn = document.forms["myform"]["gender"].value;
+    let ph = document.forms["myform"]["number"].value;
+    let ad = document.forms["myform"]["address"].value;
+    let un = document.forms["myform"]["username"].value;
+    let pw = document.forms["myform"]["password"].value;
+
+    // Validation checks
+    if (!/^[A-Za-z]+([ ]?[A-Za-z]+)*$/.test(na)) {
+      window.alert("Name Must contain only Alphabets...");
+      return false;
+    } else if (ag < 10) {
+      window.alert("Seller age must be atleast 10 years old to register as a seller...");
+      return false;
+    } else if (gn.length == 0) {
+      window.alert("Please choose the seller's gender...");
+      return false;
+    } else if (ph.length < 10 || ph.length > 10) {
+      window.alert("Phone Number must contain 10 Digits....");
+      return false;
+    } else if (ad.length < 10) {
+      window.alert("Is this your address with fewer characters? Please provide more details of your landmark...");
+      return false;}
+      else if (un.length < 4){
+        window.alert("Username must be atleast of 4 characters...");
+      return false;
+    }else if (!/[!@#$%^&*]/.test(pw)) {
+      window.alert("Password must contain at least one special character....");
+      return false;
+    } else if (pw.length < 4) {
+      window.alert("Password must contain at least 4 characters...");
+      return false;
+    } 
+    else {
+      // Show success toast notification
+      window.alert("Editted Successfully")    }
+  }
+        </script>
+
+    </head>
+
+    <body>
+
+        {% include 'nav_bar_2_buyer.html' %}
+        <br><br><br>
+
+
+
+
+
+
+
+
+
+
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+    <style>
+      .background-radial-gradient {
+        background-color: hsl(218, 41%, 15%);
+        background-image: radial-gradient(650px circle at 0% 0%,
+            hsl(218, 41%, 35%) 15%,
+            hsl(218, 41%, 30%) 35%,
+            hsl(218, 41%, 20%) 75%,
+            hsl(218, 41%, 19%) 80%,
+            transparent 100%),
+          radial-gradient(1250px circle at 100% 100%,
+            hsl(218, 41%, 45%) 15%,
+            hsl(218, 41%, 30%) 35%,
+            hsl(218, 41%, 20%) 75%,
+            hsl(218, 41%, 19%) 80%,
+            transparent 100%);
+      }
+  
+      #radius-shape-1 {
+        height: 220px;
+        width: 220px;
+        top: -60px;
+        left: -130px;
+        background: radial-gradient(#44006b, #ad1fff);
+        overflow: hidden;
+      }
+  
+      #radius-shape-2 {
+        border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+        bottom: -60px;
+        right: -110px;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(#44006b, #ad1fff);
+        overflow: hidden;
+      }
+  
+      .bg-glass {
+        background-color: hsla(0, 0%, 100%, 0.9) !important;
+        backdrop-filter: saturate(200%) blur(25px);
+      }
+    </style>
+  
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+            <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(220, 60%, 34%)">Hiii {{value.name}}</h1>
+          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+            You are a buyer <br />
+            <span style="color: hsl(218, 81%, 75%)">You can Edit your profile here</span><br>
+          </h1>
+          <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+            The most best products are awaiting for you...
+            <p>Please stay tune to our newly added products...
+                <p>Thank you...</p>
+            </p>
+          </p>
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+  
+          <div class="card bg-glass">
+            <div class="card-body px-4 py-5 px-md-5">
+              <form action="" method="post" name="myform" enctype="multipart/form-data" onsubmit="return validate1()">
+                {% csrf_token %}
+
+                <!-- Change Profile Picture -->
+                  <div class="col-md-12">  
+                    <div style="border: 1px solid lightblue;"><br>
+                        <img src="{{ value.bpic.url }}" class="card-img-top w-100 rounded-circle" alt="profile Picture">
+                        <div class="card-body">
+                            <input type="file" name="bp" accept="image/*"><br>                    
+                            <h5 style="color: blue; font-weight: 800;">Change Profile</h5>
+                        </div>
+                    </div><br><br>
+                  </div>
+
+                <!-- Name -->
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="form3Example1" class="form-control form-control-sm" value="{{value.name}}" name="name" required/>
+                      <label class="form-label" for="form3Example1">Full name</label>
+                    </div>
+                  </div>
+
+                  <!-- Age -->
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="number" min="1" max="120" id="form3Example2" class="form-control form-control-sm" value="{{value.age}}" name="age" required/>
+                      <label class="form-label" for="form3Example2">Age</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Gender -->
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                        <select name="gender" class="form-control form-control-sm" required>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="{{value.gender}}"selected>{{value.gender}}</option>
+                        </select>
+                      <label class="form-label" for="form3Example1">Gender</label>
+                    </div>
+                  </div>
+
+                  <!-- Email ID -->
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="email" id="form3Example2" class="form-control form-control-sm" value="{{value.email}}" name="email" required/>
+                      <label class="form-label" for="form3Example2">Email ID</label>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- Address -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <textarea rows="5" class="form-control form-control-sm" name="address" placeholder="Address must contain Pin-code" required>{{value.Address}}</textarea>
+                  <label class="form-label" for="form3Example3">Contact address</label>
+                </div>
+                <!-- Mobile Number -->
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline">
+                        <input type="number" id="form3Example1" class="form-control form-control-sm" value="{{value.number}}" name="number" required/>
+                        <label class="form-label" for="form3Example1">Mobile Number</label>
+                      </div>
+                    </div>
+                <!-- Username -->
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline">
+                        <input type="text" id="form3Example2" class="form-control form-control-sm" value="{{value.username}}" name="username" required/>
+                        <label class="form-label" for="form3Example2">Username</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Password input -->
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="text" id="form3Example4" class="form-control form-control-sm" value="{{value.password}}" name="password" required/>
+                    <label class="form-label" for="form3Example1">Password</label>
+
+                  </div>
+
+                <!-- Submit Button -->
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline">
+                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Update Changes</button>
+                      </div>
+                    </div>
+                <!-- Reset Button -->
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline">
+                        <button type="reset" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger btn-block mb-4">Reset to old details</button>
+                      </div>
+                    </div>
+                  </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+
+
+        {% include 'footer.html' %}
+
+
+
+    </body>
+</html>

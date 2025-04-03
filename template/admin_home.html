@@ -1,0 +1,89 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        
+    </head>
+
+    <body style="background-color: black;">
+
+        {% include 'nav_bar_1_admin.html' %}
+
+        <br><br><br><br><br>
+        
+        <div class="container ">
+            <h1>This is a Admin Home Page</h1>
+        </div><br><br><br>
+
+        
+
+        
+        
+        <div class="container">
+            <h3 style="color: blue;"><ins>Hello {{value.username}}</ins></h3><br><br>
+
+            <table>
+                <tr>
+                    <td><a href="admin_view_all_products" class="btn btn-primary">View all active Products for sale</a></td>
+                    <tr>
+                        <td style="width: 50px;"></td>
+                    </tr>
+                    <td style="width: 50px;"></td>
+                    <td><a href="admin_view_all_seller_personal_details" class="btn btn-primary">View all seller personal details</a> </td>
+                    <td style="width: 50px;"></td>
+                    <td><a href="admin_rejected_products" class="btn btn-primary">View Rejected Products</a></td>
+                    <td style="width: 50px;"></td>
+                    
+                </tr>
+                <tr>
+                    <td style="width: 50px;"></td>
+                </tr>
+                <tr>
+                    <td><a href="admin_delete_account_of_seller" class="btn btn-primary">Delete the account of seller</a></td>
+                    <td style="width: 50px;"></td>
+                    <td><a href="admin_view_admin_deleted_seller_accounts" class="btn btn-primary">Seller Accounts You deleted</a></td>
+                    <td style="width: 50px;"></td>
+                    <td><a href="control_comments" class="btn btn-primary" >Delete Public Comments</a></td>
+                    <td style="width: 50px;"></td>
+                    <td><a href="admin_view_buyers_detail" class="btn btn-primary" >Buyer Account details</a></td>
+                </tr>
+            </table><br><br>
+
+            <hr style="background-color: aqua;">
+        </div>
+        
+
+        
+
+
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

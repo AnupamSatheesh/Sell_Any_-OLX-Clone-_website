@@ -1,0 +1,249 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <script>
+          function validate(){
+            window.alert("Item Added Succesfully")
+          }
+        </script>
+        <style>
+          input:valid{border-color: green;}
+          input:invalid{border-color: red}
+          .form3Example2:valid{color: green;}
+          .form3Example2:invalid{color: red;}
+          #form3Example1:invalid{border-color: red;}
+          #form3Example1:valid{border-color: green;}
+
+          .abc{color: blue; font-size:x-small;}
+        </style>
+        
+    </head>
+
+    <body>
+        <!-- Header -->
+        {% include 'nav_bar_3_seller.html' %}
+
+        <br><br><br>
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+    <style>
+      .background-radial-gradient {
+        background-color: hsl(218, 41%, 15%);
+        background-image: radial-gradient(650px circle at 0% 0%,
+            hsl(218, 41%, 35%) 15%,
+            hsl(218, 41%, 30%) 35%,
+            hsl(218, 41%, 20%) 75%,
+            hsl(218, 41%, 19%) 80%,
+            transparent 100%),
+          radial-gradient(1250px circle at 100% 100%,
+            hsl(218, 41%, 45%) 15%,
+            hsl(218, 41%, 30%) 35%,
+            hsl(218, 41%, 20%) 75%,
+            hsl(218, 41%, 19%) 80%,
+            transparent 100%);
+      }
+  
+      #radius-shape-1 {
+        height: 220px;
+        width: 220px;
+        top: -60px;
+        left: -130px;
+        background: radial-gradient(#44006b, #ad1fff);
+        overflow: hidden;
+      }
+  
+      #radius-shape-2 {
+        border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+        bottom: -60px;
+        right: -110px;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(#44006b, #ad1fff);
+        overflow: hidden;
+      }
+  
+      .bg-glass {
+        background-color: hsla(0, 0%, 100%, 0.9) !important;
+        backdrop-filter: saturate(200%) blur(25px);
+      }
+    </style>
+  
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+            <h1 class="my-5 display-5 fw-bold ls-tight" style="color: red">Note: </h1>
+          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+            This is a page where you can keep your products for sale. <br />
+            <span style="color: hsl(218, 81%, 75%)">You Have to fill out all the details without fail.</span><br>
+          </h1>
+          <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+            You can sell your best products as per our  <a href="about_us_deadmore_guideline" style="font-size: x-large;"><ins>guidelines</ins></a> 
+            <p style="color: red;">Please stay tune to get someone intrested on to your products...
+                <p style="color: aquamarine;">Thank you...</p>
+            </p>
+          </p>
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+  
+          <div class="card bg-glass" style="width: 800px;">
+            
+            <div class="card-body px-4 py-5 px-md-5">
+                <p><ins style="color: blue; font-size: large; font-weight: 600;">Please Fill Out All The Details</ins></p><br>
+              <form action="" method="post" enctype="multipart/form-data" onsubmit="return validate()">
+                {% csrf_token %}
+                <!-- Image 1 -->
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" class="form3Example2" name="imag1" required/>
+                      <label class="abc" class="form-label" for="form3Example2">First Product image</label>
+                    </div>
+                  </div>
+  
+                  <!-- Image 2 -->
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                        <input type="file" class="form3Example2" name="imag2" required/>
+                        <label class="abc" class="form-label" for="form3Example2">Second Product image</label>
+                      </div>
+                  </div>
+                </div>
+  
+                <!-- Image 3 -->
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                        <input type="file" class="form3Example2" name="imag3" required/>
+                        <label class="abc" class="form-label" for="form3Example2">Third Product image</label>
+                    </div>
+                  </div>
+  
+                  <!-- Image 4 -->
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                        <input type="file" class="form3Example2" name="imag4" required/>
+                        <label class="abc" class="form-label" for="form3Example2">Fourth Product image</label>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- Image 5 -->
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline">
+                          <input type="file" class="form3Example2" name="imag5" required/>
+                          <label class="abc" class="form-label" for="form3Example2">Fifth Product image</label>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- Product title -->
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline">
+                        <input type="text" id="form3Example1" name="title" class="form-control" required/>
+                        <label class="form-label" for="form3Example1">Product title</label>
+                      </div>
+                    </div>
+                <!-- Price -->
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline">
+                        <input type="number" id="form3Example1" name="prize" class="form-control" required/>
+                        <label class="form-label" for="form3Example1">Accurate Prize(in INR)</label>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <!-- Description details -->
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <textarea rows="5" name="description" id="form3Example1" class="form-control" required></textarea>
+                    <label class="form-label" for="form3Example1">Description</label>
+  
+                  </div>
+  
+                <!-- Submit Button -->
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline">
+                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sell</button>
+                      </div>
+                    </div>
+                <!-- Reset Button -->
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline">
+                        <button type="reset" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger btn-block mb-4">Clear added details</button>
+                      </div>
+                    </div>
+                  </div>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Footer -->
+         {% include 'footer.html' %}
+
+
+
+    </body>
+</html>
